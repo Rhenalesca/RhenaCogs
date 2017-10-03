@@ -6,5 +6,5 @@
     "DESCRIPTION" : "A fun guessing game that allows users to win credits!",
     "DISABLED" : false,
     "NAME" : "GuessNumber",
-    "INSTALL_MSG" : "`Thanks for installing this flop cog. Use `[p]guessnumber` to play!"
+    "INSTALL_MSG" : "```Thanks for installing this flop cog. Use `[p]guessnumber` to play!```"
 }
