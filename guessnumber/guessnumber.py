@@ -1,13 +1,13 @@
 import random
-from discord.ext import commands
-from discord.ext.commands.cooldowns import BucketType
-from .utils import checks
 
 # THIS IS A GUESS NUMBER GAME.
-# Players get 5 guesses.
-# They must guess a random number between 1 to 100.
 
-class GuessNumber:
+class Game:
+		def __init__(self, secret_number):
+				self.secret_number = secret_number
+				self.fails = 0
+
+class Guess Number:
 		def __init__(self, bot):
 				self.bot = bot
 				self.bank = self.bot.get_cog('Economy').bank
@@ -20,8 +20,7 @@ class GuessNumber:
 				self.games[ctx.message.server.id] = game
 				return game
 
-        @commands.group(aliases=['gn', 'guess'], pass_context=True, no_pm=True, invoke_without_command=True)
-        @commands.cooldown(0, 1, BucketType.user)
+        @commands.group(aliases=['guess'], pass_context=True, no_pm=True, invoke_without_command=True)
         async def guessnumber(self, ctx):
                 """Try guessing the number and win money!"""
                 attempts = 5
@@ -54,6 +53,7 @@ class GuessNumber:
                 if int(guess.content) != secret_number:
                     await self.bot.say('Sorry {}, you reached the maximum number of tries!').format(user.mention)
                     await self.bot.say('The secret number was {}'.format(secret_number))
+                    return
 
 def setup(bot):
     bot.add_cog(GuessTheNumber(bot))
