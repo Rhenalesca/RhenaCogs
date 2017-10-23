@@ -1,0 +1,8 @@
+{
+    "AUTHOR" : "Rhenalesca",
+    "SHORT" : "Add a starboard channel.",
+    "DESCRIPTION" : "Star a message and have it be added to the server's starboard channel.",
+    "DISABLED" : false,
+    "NAME" : "Stars",
+    "INSTALL_MSG" : "```Thanks for installing this flop cog. Use `?starboard` to setup the channel, use ?star limit <number> to change minimum stars needed.```"
+}
